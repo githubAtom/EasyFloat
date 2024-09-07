@@ -47,11 +47,7 @@ object DisplayUtils {
         val manager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val metrics = DisplayMetrics()
         manager.defaultDisplay.getRealMetrics(metrics)
-        return if (context.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            metrics.widthPixels
-        } else {
-            metrics.widthPixels - getNavigationBarCurrentHeight(context)
-        }
+        return metrics.widthPixels
     }
 
     /**
